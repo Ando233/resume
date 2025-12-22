@@ -33,6 +33,12 @@
   == #fa[#briefcase] 工作经历
 
     #cventry(
+        tl: [腾讯],
+        bl: [云鼎实验室],
+        br: [安全技术（青云计划）],
+    )[]
+
+    #cventry(
         tl: [NVIDIA],
         bl: [OCG(Optimizing Code Generator) team],
         br: [GPU 编译器 LLVM 后端实习生],
@@ -98,7 +104,7 @@
         tl: [#fa[#code.branch] 开源社区贡献],
     )[
         - *#fa[#rust]* 负责维护官方 IDE（语言服务器）#ghrepo("rust-lang/rust-analyzer")；在 rust 社区也贡献过 #ghrepo("rust-lang/rust")，#ghrepo("rust-lang/rust-clippy")，#ghrepo("rust-lang/rustup")，#ghrepo("rust-lang/rust-mode") 等项目；
-        - #ghrepo("llvm/llvm-project")，#ghrepo("clangd/vscode-clangd")，#ghrepo("MikePopoloski/slang"), #ghrepo("google/autocxx")，#ghrepo("yuin/goldmark"), #ghrepo("moonbitlang/tree-sitter-moonbit")，更多项目见 #link("https://github.com/roife")[GitHub]。
+        - #ghrepo("llvm/llvm-project")，#ghrepo("clangd/vscode-clangd"), #ghrepo("LuaLS/lua-language-server"), #ghrepo("google/autocxx")，#ghrepo("yuin/goldmark"), #ghrepo("moonbitlang/tree-sitter-moonbit")，更多项目见 #link("https://github.com/roife")[GitHub]。
     ]
 
   == #fa[#laptop.code] 专业技能
@@ -118,11 +124,6 @@
             - （*语言实现*）面向对象、函数式等多种范式语言的编译过程，以及双向类型检查等语言特性的实现；
             - （*IDE 开发*） *2 年经验*，基于*增量计算*和 *LSP* 的 IDE 架构，编辑器插件开发；熟悉 rust-analyzer 和 clangd；
             - （*编译优化*）编译器中端、后端的分析和优化，包括 Mem2Reg, GVN, RegAlloc, List Scheduling 等；熟悉 *LLVM* 上的分析优化实现和代码库，熟悉 LLVM-IR 与 MLIR；
-        ],
-        [*高性能计算*], [
-            - X86 和 ARM 指令集架构；了解超标量处理器的架构和现代存储架构；了解 NVIDIA GPU 的架构和渲染管线；
-            - （*性能分析*）NVIDIA Nsight, Intel VTune Profiler 等性能分析工具的使用；
-            - （*优化加速*）了解 *OpenMP*, *CUDA* 等并行计算模型；SSE, AVX, NEON 等常见的 SIMD 架构及应用
         ],
         [*应用开发*], [Ruby on Rails, Django, SwiftUI 等开发框架；PostgreSQL、Redis 等数据库；Docker 和 CI/CD 配置等 DevOps 工作；],
         [*开发环境*], [熟悉 Emacs / VS Code，习惯在 macOS / Linux 下工作；熟练使用生成式 AI 工具（如 GitHub Copilot）提高效率。],
