@@ -96,7 +96,7 @@
     show link: it => underline(offset: 1.8pt, it)
     set page(margin: (x: 0.6cm, y: 1cm), numbering: "1 / 1")
     set par(justify: true, leading: 0.86em)
-    set text(font: fonts, size: 9.8pt)
+    set text(font: fonts, size: 10pt)
 
     body
 }

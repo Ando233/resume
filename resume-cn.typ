@@ -36,6 +36,7 @@
         tl: [腾讯],
         bl: [云鼎实验室],
         br: [安全技术（青云计划）],
+        tr: [待入职],
     )[]
 
     #cventry(
@@ -126,7 +127,7 @@
             - （*编译优化*）编译器中端、后端的分析和优化，包括 Mem2Reg, GVN, RegAlloc, List Scheduling 等；熟悉 *LLVM* 上的分析优化实现和代码库，熟悉 LLVM-IR 与 MLIR；
         ],
         [*应用开发*], [Ruby on Rails, Django, SwiftUI 等开发框架；PostgreSQL、Redis 等数据库；Docker 和 CI/CD 配置等 DevOps 工作；],
-        [*开发环境*], [熟悉 Emacs / VS Code，习惯在 macOS / Linux 下工作；熟练使用生成式 AI 工具（如 GitHub Copilot）提高效率。],
+        [*开发环境*], [熟悉 Emacs / VS Code，习惯在 macOS / Linux 下工作；熟练使用生成式 AI 工具提高效率。],
     )
 
   == #fa[#th.list] 其他
