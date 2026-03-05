@@ -6,106 +6,125 @@
 #let resume_name = private_info.name_cn
 #let resume_phone = private_info.phone
 
-= #redact(alter: "roife")[#resume_name]
+= #redact(alter: "ando")[#resume_name]
 
   #fa[#phone] #redact(mark: true)[#resume_phone] |
-  #fa[#envelope] roifewu\@gmail.com |
-  #fa[#github] #link("https://github.com/roife")[roife] |
-  #fa[#globe] #link("https://roife.github.io")[roife.github.io]
+  #fa[#envelope] flairando\@gmail.com |
+  #fa[#github] #link("https://github.com/Ando233")[ando] |
+  #fa[#globe] #link("https://ando233.github.io/")[ando233.github.io]
 
   == #fa[#graduation-cap] 教育背景
 
     #cventry(
-        tl: [南京大学],
-        tr: [2023.09 - 2026.06（预计）],
+        tl: [北京航空航天大学],
+        tr: [2024.09 - 2027.06（预计）],
     )[
-      硕士，计算机科学与技术｜#link("https://pascal-lab.net")[PASCAL Lab]，导师：李#redact(mark: true)[樾]｜研究方向为*程序语言*与*程序分析*。 #linebreak()
-      助教工作：编译原理（2024 春）
+      硕士，软件学院｜#link("http://www.ldmcnlp.com/about/")[LDMC Lab]，导师：牛#redact(mark: true)[建伟]｜研究方向为*图像生成*与*多模态大模型*。 #linebreak()
+    //   助教工作：编译原理（2024 春）
     ]
     #cventry(
         tl: [北京航空航天大学],
-        tr: [2019.09 - 2023.06],
+        tr: [2020.09 - 2024.06],
     )[
-        本科，计算机科学与技术｜GPA: 3.84/4.00；获*国家奖学金* / *优秀毕业生* / 2021 年计算机系统能力大赛编译赛一等奖等奖项。#linebreak()
-        助教工作：程序设计基础（2020 秋），面向对象设计与构建（2021 秋，2022 春）
+        本科，软件学院｜GPA: 3.79/4.00；*优秀毕业生* / 全国大学生数学建模大赛国家级一等奖 / 计算机系统能力大赛编译赛一等奖 /。#linebreak()
+        助教工作：分布式系统（2023 秋），编译原理（2023 秋，2024 春）
+    ]
+
+  == #fa[#flask] 学术成果
+
+    #cventry(
+        tl: [SREdit],
+        tr: [IJCAI 2026 · Under Review · First Author],
+    )[
+        *SREdit: A Self-Rewarding Framework Aligning Understanding and Evaluation in Reinforcement Learning for Image Editing* #linebreak()
+        - 提出 *Self-Rewarding RL Framework*，统一 MLLM 指令理解与 Reward 评估，系统分析并解决 MLLM–DiT 架构中的 Understanding–Evaluation mismatch 问题；
+        - 提出 *Region-aware Reward Reweighting*，基于 cross-attention 引导强化学习空间加权优化，提高局部编辑精度；
+        - 构建 40K 人类偏好编辑数据集，在 GEdit-Bench / ImgEdit-Bench / KRIS-Bench 上分别提升 *3.8% / 2.5% / 3.8%*；
+    ]
+
+    #cventry(
+        tl: [FedPDG],
+        tr: [ICML 2026 · Under Review · First Author],
+    )[
+    *FedPDG: Prediction Discrepancy–Guided Diffusion for Heterogeneous Federated Learning* #linebreak()
+        - 用Diffusion models为联邦学习中的客户端生成额外训练数据，从而解决客户端间的数据异质性问题；
+        - 基于 DPO 范式对 Diffusion Model 进行 LoRA 微调，使模型优先生成客户端相对于全局缺失的样本；
+        - Reward 设计利用global model和client model对于生成数据的 *Prediction Discrepancy*，引导模型生成更符合客户端需求的样本；
     ]
 
   == #fa[#briefcase] 工作经历
 
-    #cventry(
-        tl: [腾讯安全],
-        bl: [云鼎实验室],
-        br: [安全技术（青云计划）],
-        tr: [待入职],
-    )[]
+    // #cventry(
+    //     tl: [腾讯安全],
+    //     bl: [云鼎实验室],
+    //     br: [安全技术（青云计划）],
+    //     tr: [待入职],
+    // )[]
 
     #cventry(
-        tl: [NVIDIA],
-        bl: [OCG(Optimizing Code Generator) team],
-        br: [GPU 编译器 LLVM 后端实习生],
-        tr: [2025.02 - 至今]
+        tl: [美团],
+        bl: [数字人与创意生成组],
+        br: [AIGC 算法实习生],
+        tr: [2024.10 - 至今]
     )[
-        - 主导了 NVIDIA GPU 图形编译器与 NVVM 的访存指令 *vectorizer* 的合并，旨在对齐 LLVM 上游并降低维护开销：
-          - 为了支持图形访存指令，独立设计了*多地址图形访存指令*的编码方案，以复用 LLVM 访存向量化器的核心流程；
-          - 为图形指令添加 alias analysis 的支持，深入分析 BasicAA 和 SCEVAA 以支持新 intrinsics；
-          - 改进了 LLVM 的 alignment inference 算法，通过对 SCEV 求解最大公约数，以支持对循环迭代变量的对齐推断；
-          - 实现了*十余个*图形访存指令向量化相关*优化*，包括*非规则访存序列填充*等，将向量化成功率提升了 *40%*；
-        - 参与图形编译器维护，修复了数个 Vectorization, SCEV 等优化的 bug；
+        - 参与 AIGC 漫剧生成方向的核心算法研发，基于 *QwenImageEdit* 构建多元素融合生成框架，重点解决多角色/多资产在单帧内的结构对齐与语义一致性问题，生成一致性指标较 baseline 提升 *20%+*
+
+        - 主R 影视综长视频的自动化剪辑项目，结合 *ASR / 声纹检测 / VLM* 构建从素材解析到成片输出的端到端 pipeline，实现“高光前置”的短视频生成策略。目前已线上落地，支持日均处理视频 *1k+* 条，较人工剪辑效率提升 *8x*，短视频播放完成率提升约 *12%*。
+
+        - 主R 节日氛围感图像可控编辑项目：针对国内传统节日，构建专属图像编辑数据集，基于Kontext / QwenImageEdit 进行 *LoRA微调和FlowGRPO强化学习* 训练，实现对酒旅商家宣传图插入特定节日氛围感的元素。
     ]
 
     #cventry(
-        tl: [#link("https://foundation.rust-lang.org/news/announcing-the-rust-foundation-s-2024-fellows/")[Rust Foundation Fellowship Program]],
-        bl: [Rust 基金会开源资助（全球约 20 人）],
-        br: [Project Fellow],
-        tr: [2024.09 - 2025.09]
+        tl: [清研兰亭],
+        bl: [知识智能与检索组],
+        br: [大语言模型算法实习生],
+        tr: [2023.10 - 2024.02]
     )[
-        - 作为 #link("https://www.rust-lang.org/governance/teams/compiler#team-rust-analyzer-contributors", [#fa[#rust] *Rust-lang Organization 成员*])（rust-analyzer-contributors-team） 和 *rust-analyzer 维护者*（Rust 语言官方 IDE）之一，社区中贡献排名在*前 1%*，参与 issues 处理、PR 审核等维护工作；同时参与维护 rust 语言社区其他项目，如 rust-clippy 等；
-        - 实现了控制流高亮、快照测试更新等多项功能，并参与了大量 bug 修复，增强了 IDE 在代码理解、自动生成等多方面的能力；
-        - 为项目的 unicode 断字断行模块编写了 NEON 下的 *SIMD* 实现，使得该模块在 ARM 平台上提速 *6.5 倍*；
-        - v0.3.1992 *事故救火*：在发布新版本 4 小时后，社区发现该版本存在导致资源耗尽且无法结束进程的恶性 BUG。本人在 *3 小时内*定位到错误的依赖图搜索算法，并*设计新算法*解决了问题。该紧急修复控制了事故影响范围，避免了影响全球 Rust 开发者的工作。
+        - 参与企业级知识图谱与智能问答系统的算法研发，构建面向企业文档与资料的语义匹配与检索框架；
+        - 构建“jieba分词召回 + llama2 精排”的两阶段架构，提高资料定位的准确率与响应效率（内部评测准确率提升约 *15%*）。
     ]
 
-  == #fa[#project-diagram] 个人项目
+//   == #fa[#project-diagram] 个人项目
 
-    #cventry(
-        tl: [Vizsla],
-        bl: [面向芯片前端设计的现代化 IDE · 硕士毕设项目],
-        br: [Rust / SystemVerilog],
-        tr: [#ghrepo("roife/vizsla") (WIP)],
-    )[
-        - 实现了一套面向可综合 SystemVerilog 的*语义分析框架*以及 IDE 基础设施，旨在为芯片设计配备现代 IDE 功能；
-        - 基于*增量计算*架构，设计并实现了一套增量分析 IR 和增量分析 pass，使得代码分析器无需全量更新即可得到准确的分析结果；
-        - 项目在功能、性能等指标上均达到*业界先进水平*：已完成面向 SystemVerilog 的代码导航、语义重构、代码补全、诊断等*数十项*现代 IDE 特性，并能够利用增量语义分析在各项功能上做到*毫秒级*延迟；基于语言服务器协议，适配 VS Code、Emacs 等主流编辑器；
-    ]
+//     #cventry(
+//         tl: [Vizsla],
+//         bl: [面向芯片前端设计的现代化 IDE · 硕士毕设项目],
+//         br: [Rust / SystemVerilog],
+//         tr: [#ghrepo("roife/vizsla") (WIP)],
+//     )[
+//         - 实现了一套面向可综合 SystemVerilog 的*语义分析框架*以及 IDE 基础设施，旨在为芯片设计配备现代 IDE 功能；
+//         - 基于*增量计算*架构，设计并实现了一套增量分析 IR 和增量分析 pass，使得代码分析器无需全量更新即可得到准确的分析结果；
+//         - 项目在功能、性能等指标上均达到*业界先进水平*：已完成面向 SystemVerilog 的代码导航、语义重构、代码补全、诊断等*数十项*现代 IDE 特性，并能够利用增量语义分析在各项功能上做到*毫秒级*延迟；基于语言服务器协议，适配 VS Code、Emacs 等主流编辑器；
+//     ]
 
-    #cventry(
-        tl: [Ailurus],
-        bl: [编程语言及工具链设计探索 · 个人兴趣项目],
-        br: [Rust],
-        tr: [#ghrepo("roife/ailurus")],
-    )[
-        - 基于 *Martin-Löf 类型论*；支持 *dependent type*、dependent pattern matching、inductive datatype 等特性。实现了 propositional equality，使用 Normalization by Evaluation 进行等价检查，可实现简单的定理证明；
-        - 采用基于 *typeclass* 的 ad-hoc polymorphism，并基于此实现了*运算符重载*；实现了 *module system*，支持代码的命名空间和封装；
-        - 旨在作为实验平台，探索现代编程语言工具链（如编译器、IDE 等）的协同设计架构，提高编程语言开发的效率和可维护性。
-    ]
+    // #cventry(
+    //     tl: [Ailurus],
+    //     bl: [编程语言及工具链设计探索 · 个人兴趣项目],
+    //     br: [Rust],
+    //     tr: [#ghrepo("roife/ailurus")],
+    // )[
+    //     - 基于 *Martin-Löf 类型论*；支持 *dependent type*、dependent pattern matching、inductive datatype 等特性。实现了 propositional equality，使用 Normalization by Evaluation 进行等价检查，可实现简单的定理证明；
+    //     - 采用基于 *typeclass* 的 ad-hoc polymorphism，并基于此实现了*运算符重载*；实现了 *module system*，支持代码的命名空间和封装；
+    //     - 旨在作为实验平台，探索现代编程语言工具链（如编译器、IDE 等）的协同设计架构，提高编程语言开发的效率和可维护性。
+    // ]
 
-    #cventry(
-         tl: [Ayame],
-         bl: [SysY（C 子集）到 ARMv7 的编译器 · 全国大学生系统能力竞赛（编译器设计）比赛项目],
-         br: [Java / LLVM-IR / ARM],
-         tr: ghrepo("No-SF-Work/ayame"),
-     )[
-         - 合作项目，个人主要负责编写面向 Machine IR 和体系结构的后端优化和代码生成，完成了基于图着色的*迭代寄存器合并*算法、*指令调度*、*死代码删除*、窥孔优化等，同时参与了部分块的编写；
-         - 同时负责项目的测试和 DevOps，利用 docker 和 GitLab CI 搭建了测试流程，并编写了 Python 脚本自动分析测试结果；
-         - 项目从零开始，完成了从语法解析到代码生成的完整编译器 pipeline，编写了大量 SSA IR 与 Machine IR 上的优化，最终在比赛中获一等奖。本项目在比赛中总排名第二，在*近一半样例上排名第一*，并在 1/3 的样例上优化效果超越 `gcc -O3` 与 `clang -O3`。
-    ]
+    // #cventry(
+    //      tl: [Ayame],
+    //      bl: [SysY（C 子集）到 ARMv7 的编译器 · 全国大学生系统能力竞赛（编译器设计）比赛项目],
+    //      br: [Java / LLVM-IR / ARM],
+    //      tr: ghrepo("No-SF-Work/ayame"),
+    //  )[
+    //      - 合作项目，个人主要负责编写面向 Machine IR 和体系结构的后端优化和代码生成，完成了基于图着色的*迭代寄存器合并*算法、*指令调度*、*死代码删除*、窥孔优化等，同时参与了部分块的编写；
+    //      - 同时负责项目的测试和 DevOps，利用 docker 和 GitLab CI 搭建了测试流程，并编写了 Python 脚本自动分析测试结果；
+    //      - 项目从零开始，完成了从语法解析到代码生成的完整编译器 pipeline，编写了大量 SSA IR 与 Machine IR 上的优化，最终在比赛中获一等奖。本项目在比赛中总排名第二，在*近一半样例上排名第一*，并在 1/3 的样例上优化效果超越 `gcc -O3` 与 `clang -O3`。
+    // ]
 
 
     #cventry(
         tl: [#fa[#code.branch] 开源社区贡献],
     )[
-        - *#fa[#rust]* 负责维护官方 IDE（语言服务器）#ghrepo("rust-lang/rust-analyzer")；在 rust 社区也贡献过 #ghrepo("rust-lang/rust")，#ghrepo("rust-lang/rust-clippy")，#ghrepo("rust-lang/rustup")，#ghrepo("rust-lang/rust-mode") 等项目；
-        - #ghrepo("llvm/llvm-project")，#ghrepo("clangd/vscode-clangd"), #ghrepo("LuaLS/lua-language-server"), #ghrepo("google/autocxx")，#ghrepo("yuin/goldmark"), #ghrepo("moonbitlang/tree-sitter-moonbit")，更多项目见 #link("https://github.com/roife")[GitHub]。
+        - 向 #ghrepo("huggingface/diffusers") (32.9k+ stars) 提交并合并 PR #link("https://github.com/huggingface/diffusers/pull/13046")[#13046]，复现并工程化论文《Diffusion Transformers with Representation Autoencoders》核心方法；
+        - 维护 #ghrepo("duoan/TorchCode") (400+ stars), 贡献若干常见算子、模块等，包含grpo_loss、DiT Block等；
     ]
 
   == #fa[#laptop.code] 专业技能
@@ -115,22 +134,27 @@
         align: (right, left),
         row-gutter: 11pt,
         gutter: 8pt,
-        [*编程语言*], [能力不局限于特定编程语言。熟悉 C, C++, Rust, Java, Python, JavsScript/TypeScript, Verilog/SystemVerilog, EmacsLisp；学习并使用过 Ruby, Swift, OCaml, Haskell, Coq, Agda 等；],
-        [*程序语言理论*], [
-            - 形式语义、类型论、计算模型、自动机等基础理论；学习过 Coq、Agda 等定理证明器的使用；
-            - （*类型系统*）Hindley-Milner, Subtyping, System F, Dependent Type 等类型系统的理论和实现；
-            - （*静态分析*）数据流分析、控制流分析、IFDS、采用不同敏感度的*指针分析*等常用分析算法
+        [*编程语言*], [能力不局限于特定编程语言。熟悉 Python, C, C++, Java等常见语言；熟悉 Shell、Git 工作流；],
+        [*生成模型与扩散模型*], [
+            - 深入理解 Diffusion Models：SDE / ODE 视角、Score-based Modeling、Flow Matching；
+            - 具备 LoRA / DPO 微调 diffusion model 实践经验；
         ],
-        [*编译器设计*], [*3 年经验*。精通编译器从语法解析到代码生成的*全 pipeline 开发*，熟悉多种 *IR*（ANF, SSA, CPS 等）：
-            - （*语言实现*）面向对象、函数式等多种范式语言的编译过程，以及双向类型检查等语言特性的实现；
-            - （*IDE 开发*） *2 年经验*，基于*增量计算*和 *LSP* 的 IDE 架构，编辑器插件开发；熟悉 rust-analyzer 和 clangd；
-            - （*编译优化*）编译器中端、后端的分析和优化，包括 Mem2Reg, GVN, RegAlloc, List Scheduling 等；熟悉 *LLVM* 上的分析优化实现和代码库，熟悉 LLVM-IR 与 MLIR；
+        [*多模态与大模型*], [
+            - 熟悉 VLM 架构（Qwen系列, LLaMA 系列等）；
+            - 熟悉 PPO / GRPO 等策略优化方法；
         ],
-        [*应用开发*], [Ruby on Rails, Django, SwiftUI 等开发框架；PostgreSQL、Redis 等数据库；Docker 和 CI/CD 配置等 DevOps 工作；],
-        [*开发环境*], [熟悉 Emacs / VS Code，习惯在 macOS / Linux 下工作；熟练使用生成式 AI 工具提高效率。],
+        // [*应用开发*], [熟悉 PyTorch / Accelerate / DeepSpeed 分布式训练；熟悉 diffusers / transformers 等生成框架底层实现；熟悉 ComfyUI 与生成式工作流搭建；],
+        // [*开发环境*], [熟悉 VS Code / Cursor，习惯在 macOS / Linux 下工作；熟练使用生成式 AI 工具提高效率。],
     )
+//   == #fa[#th.list] 技术传播与分享
+//     #cventry(
+//         tl: [生成模型领域自媒体创作者],
+//     )[
+//         - 系统讲解最新 Diffusion / 多模态模型与前沿论文；
+//         - 开设 “From Scratch” 系列，逐步实现 diffusion / LLM 等核心模块；
+//         - 深度拆解主流开源项目，分析其训练与推理机制；
+//     ]
+//   == #fa[#th.list] 其他
 
-  == #fa[#th.list] 其他
-
-    - *Talks*：
-      - _Exploring rust-analyzer: from Incremental Computation to Modern IDE_ (RustChinaConf 2025)
+//     - *Talks*：
+//       - _Exploring rust-analyzer: from Incremental Computation to Modern IDE_ (RustChinaConf 2025)
