@@ -44,7 +44,7 @@
 
     #cventry(
         tl: [FedPDG],
-        tr: [ICML 2026 · Under Review · First Author],
+        tr: [ICML 2026 · Accepted · First Author],
     )[
     *FedPDG: Prediction Discrepancy–Guided Diffusion for Heterogeneous Federated Learning* #linebreak()
         - 用Diffusion models为联邦学习中的客户端生成额外训练数据，从而解决客户端间的数据异质性问题；
@@ -62,26 +62,27 @@
     // )[]
 
     #cventry(
-        tl: [美团],
-        bl: [数字人与创意生成组],
+        tl: [快手],
+        bl: [商业化技术部/安全与生态算法组],
         br: [AIGC 算法实习生],
-        tr: [2024.10 - 至今]
+        tr: [2026.05 - 至今]
     )[
-        - 参与 AIGC 漫剧生成方向的核心算法研发，基于 *QwenImageEdit* 构建多元素融合生成框架，重点解决多角色/多资产在单帧内的结构对齐与语义一致性问题，生成一致性指标较 baseline 提升 *20%+*
+        - 提出*多关键帧引导方案*解决多分镜视频编辑的核心挑战：基于光流的分镜检测实现分镜级关键帧提取；将编辑后关键帧作为辅助条件注入视频编辑模型，解决编辑遗漏与分镜级可控性问题；
 
-        - 主R 影视综长视频的自动化剪辑项目，结合 *ASR / 声纹检测 / VLM* 构建从素材解析到成片输出的端到端 pipeline，实现“高光前置”的短视频生成策略。目前已线上落地，支持日均处理视频 *1k+* 条，较人工剪辑效率提升 *8x*，短视频播放完成率提升约 *12%*。
+        - 设计并构建 *MultiShotBench* 多分镜视频编辑评测基准，覆盖人物/物体/场景 3 大类共 12 种编辑类型；
 
-        - 主R 节日氛围感图像可控编辑项目：针对国内传统节日，构建专属图像编辑数据集，基于Kontext / QwenImageEdit 进行 *LoRA微调和FlowGRPO强化学习* 训练，实现对酒旅商家宣传图插入特定节日氛围感的元素。
+        - 训练 *ICEdit LoRA* 实现多关键帧间编辑一致性，解决跨分镜物体外观偏差问题，保证编辑效果在各分镜间统一传播；
     ]
 
     #cventry(
-        tl: [清研兰亭],
-        bl: [知识智能与检索组],
-        br: [大语言模型算法实习生],
-        tr: [2023.10 - 2024.02]
+        tl: [美团],
+        bl: [数字人与创意生成组],
+        br: [AIGC 算法实习生],
+        tr: [2024.10 - 2026.05]
     )[
-        - 参与企业级知识图谱与智能问答系统的算法研发，构建面向企业文档与资料的语义匹配与检索框架；
-        - 构建“jieba分词召回 + llama2 精排”的两阶段架构，提高资料定位的准确率与响应效率（内部评测准确率提升约 *15%*）。
+        - 基于 *QwenImageEdit* 构建 AIGC 漫剧多元素融合生成框架，解决多角色/多资产在单帧内的对齐与一致性问题；
+
+        - 主R 影视综长视频的自动化剪辑项目，结合 *ASR / 声纹检测 / VLM* 构建从素材解析到成片输出的端到端 pipeline，实现”高光前置”的短视频生成策略。目前已线上落地，支持日均处理视频 *1k+* 条，较人工剪辑效率提升 *8x*，短视频播放完成率提升约 *12%*。
     ]
 
 //   == #fa[#project-diagram] 个人项目
@@ -136,8 +137,8 @@
         gutter: 8pt,
         [*编程语言*], [能力不局限于特定编程语言。熟悉 Python, C, C++, Java等常见语言；熟悉 Shell、Git 工作流；],
         [*生成模型与扩散模型*], [
-            - 深入理解 Diffusion Models：SDE / ODE 视角、Score-based Modeling、Flow Matching；
-            - 具备 LoRA / DPO 微调 diffusion model 实践经验；
+            - 系统掌握 *Flow Matching* 理论与实现：理解其与 Diffusion (SDE/ODE)、Score-based Modeling 的统一视角，熟悉条件 / 引导式 Flow Matching 在主流图像/视频编辑模型（Flux、QwenImage、Wan 等）中的落地；
+            - 具备 LoRA / DPO / FlowGRPO 微调 diffusion model 实践经验；
         ],
         [*多模态与大模型*], [
             - 熟悉 VLM 架构（Qwen系列, LLaMA 系列等）；
